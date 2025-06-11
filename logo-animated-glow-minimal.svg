@@ -1,0 +1,76 @@
+
+<svg width="700" height="800" viewBox="-50 -50 700 800" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes pulse {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.01); }
+      100% { transform: scale(1); }
+    }
+
+    .hex {
+      fill: none;
+      stroke: #39E600;
+      stroke-width: 8;
+      stroke-linejoin: round;
+      animation: pulse 3s infinite ease-in-out;
+      transform-origin: center;
+      filter: url(#glow);
+    }
+
+    .text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      fill: #39E600;
+      font-size: 40px;
+      text-anchor: start;
+    }
+
+    .tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      fill: #39E600;
+      font-size: 24px;
+      text-anchor: middle;
+    }
+  </style>
+
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Full hexagon for "O" -->
+  <polygon class="hex" points="150,100 200,100 225,143 200,186 150,186 125,143"/>
+
+  <!-- "C" moved up 20px -->
+  <polyline class="hex" points="
+    265,151
+    240,151
+    215,194
+    240,237
+    265,237
+  "/>
+
+  <!-- "D" reverted to original polyline -->
+  <polyline class="hex" points="
+    146,206
+    200,206
+    225,249
+    200,292
+    150,292
+    150,206
+  "/>
+
+  <!-- Stacked text block -->
+  <text x="240" y="140" class="text">RE</text>
+  <text x="260" y="210" class="text">AL</text>
+  <text x="240" y="280" class="text">IRTWORKS</text>
+
+  <!-- Tagline below -->
+  <text x="300" y="60" class="tagline">"Precision. Power. Perfection."</text>
+</svg>
