@@ -32,6 +32,20 @@
             margin: 0;
         }
 
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            animation: pulse 3s infinite ease-in-out;
+            filter: drop-shadow(0 0 10px #39E600);
+        }
+
+        @keyframes pulse {
+            0%   { transform: scale(1); }
+            50%  { transform: scale(1.01); }
+            100% { transform: scale(1); }
+        }
+
         section.services {
             max-width: 600px;
             background: rgba(255, 255, 255, 0.1);
@@ -80,6 +94,9 @@
 <body>
 
     <header>
+        <!-- Your animated logo -->
+        <img src="images/logo-animated-glow-minimal.svg" alt="Ore-Cal DirtWorks Logo" class="logo" />
+
         <h1>Ore-Cal DirtWorks, LLC</h1>
         <h2>"We dig deep for you."</h2>
     </header>
@@ -105,3 +122,4 @@
 
 </body>
 </html>
+
